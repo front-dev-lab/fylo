@@ -1,0 +1,40 @@
+@use '../utils';
+@use '../typography';
+
+.features-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @extend %tertiary-text;
+  text-align: center;
+
+  &__icon {
+    @include utils.adaptive-value('margin-bottom', 16, 24);
+    @include utils.adaptive-value('width', 104, 80);
+    aspect-ratio: 1;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+
+    &--pc {
+      background-image: url(/img/svg/icon-access-anywhere.svg);
+    }
+
+    &--security {
+      background-image: url(/img/svg/icon-security.svg);
+    }
+
+    &--time {
+      background-image: url(/img/svg/icon-collaboration.svg);
+    }
+
+    &--file {
+      background-image: url(/img/svg/icon-any-file.svg);
+    }
+  }
+
+  &__title {
+    margin-bottom: 8px;
+    @extend %h3;
+  }
+}

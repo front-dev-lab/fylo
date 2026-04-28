@@ -1,0 +1,26 @@
+$max-width: 1440;
+$min-width: 375;
+
+$max-mobile-width: 576px;
+$max-tablet-width: 992px;
+
+$max-image-width: 720px;
+$small-button-width: 200px;
+$min-button-height: 48;
+
+$scroll-anim-time: 500ms;
+$anim-time: 300ms;
+
+$c_white: #FFF;
+$c_gray: #C0C0C0;
+$c_black: #0B1524;
+$c_light-blue: #8ADAE3;
+$c_blue: #62E0D9;
+$c_dark-blue: #202A3C;
+$c_very-dark-blue: #1B2330;
+$c_extra-dark-blue: #181F2B;
+$c_red: #FF4242;
+
+$gradient: linear-gradient(160deg, $c_blue 0%, #34A0CD 100%);
+
+$shadow: 5px 5px 8px rgba(0, 0, 0, 0.26);

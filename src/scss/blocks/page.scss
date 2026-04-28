@@ -1,0 +1,27 @@
+@use '../utils';
+@use '../typography';
+
+.page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  @extend %main-text;
+  color: utils.$c_white;
+  background-color: utils.$c_extra-dark-blue;
+
+  &__content {
+    flex-grow: 1;
+  }
+
+  &__features {
+    @include utils.adaptive-value('margin-bottom', 137, 160);
+  }
+
+  &__about {
+    @include utils.adaptive-value('margin-bottom', 144, 154);
+  }
+
+  &__testimonials {
+    @include utils.adaptive-value('margin-bottom', 85, -16);
+  }
+}

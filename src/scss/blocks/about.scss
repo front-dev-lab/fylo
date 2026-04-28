@@ -1,0 +1,92 @@
+@use '../utils';
+@use '../typography';
+
+.about {
+  &__content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+
+    @include utils.onTablet {
+      grid-template-columns: 1fr;
+      row-gap: 48px;
+      justify-items: center;
+    }
+  }
+
+  &__image {
+    display: block;
+    width: 100%;
+    max-width: utils.$max-image-width;
+    object-fit: contain;
+    object-position: center;
+  }
+
+  &__article {
+    @include utils.adaptive-value('padding-left', 57, 0);
+  }
+
+  &__title {
+    @include utils.adaptive-value('margin-bottom', 19, 16);
+    max-width: 390px;
+    @extend %h2;
+
+    @include utils.onTablet {
+      max-width: 100%;
+      text-align: center;
+    }
+  }
+
+  &__text {
+    margin-bottom: 16px;
+
+    &:last-of-type {
+      @include utils.adaptive-value('margin-bottom', 24, 16);
+    }
+  }
+
+  &__link {
+    position: relative;
+    display: grid;
+    grid-auto-flow: column;
+    column-gap: 8px;
+    align-items: center;
+    width: max-content;
+    padding-bottom: 4px;
+    @extend %link-text;
+    color: utils.$c_blue;
+    fill: utils.$c_blue;
+    transition-property: color, fill;
+    transition-duration: utils.$anim-time;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      display: block;
+      width: 100%;
+      height: 1px;
+      background-color: utils.$c_blue;
+      transition-property: background-color;
+      transition-duration: utils.$anim-time;
+    }
+
+    &:hover {
+      color: utils.$c_white;
+      fill: utils.$c_white;
+
+      &::after {
+        background-color: utils.$c_white;
+      }
+    }
+  }
+
+  &__link-icon {
+    display: block;
+    width: 16px;
+    aspect-ratio: 1;
+    fill: inherit;
+    transform: translateY(2px);
+  }
+}

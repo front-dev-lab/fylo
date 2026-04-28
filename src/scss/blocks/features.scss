@@ -1,0 +1,20 @@
+@use '../utils';
+
+.features {
+  &__content {
+    display: grid;
+    justify-content: center;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 880px;
+    @include utils.adaptive-value('column-gap', 147, 30);
+    row-gap: 80px;
+
+    @include utils.onMobile {
+      grid-template-columns: 1fr;
+    }
+  }
+}

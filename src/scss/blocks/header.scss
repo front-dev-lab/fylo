@@ -1,0 +1,12 @@
+@use '../utils';
+
+.header {
+  @include utils.adaptive-value('padding-top', 73, 24);
+  background-color: utils.$c_dark-blue;
+
+  &__content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}

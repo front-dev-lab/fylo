@@ -1,0 +1,34 @@
+@use '../utils';
+
+.socials {
+  display: grid;
+  grid-auto-flow: column;
+  column-gap: 12px;
+  width: max-content;
+
+
+  &__link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 31px;
+    aspect-ratio: 1;
+    border: 2px solid utils.$c_white;
+    border-radius: 50%;
+    fill: utils.$c_white;
+    transition-property: border-color, fill;
+    transition-duration: utils.$anim-time;
+
+    &:hover {
+      border-color: utils.$c_blue;
+      fill: utils.$c_blue;
+    }
+  }
+
+  &__icon {
+    display: block;
+    width: 15px;
+    aspect-ratio: 1;
+    fill: inherit;
+  }
+}

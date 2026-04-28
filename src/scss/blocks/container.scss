@@ -1,0 +1,20 @@
+@use '../utils';
+
+.container {
+  margin: 0 auto;
+  max-width: utils.$max-width + px;
+  height: 100%;
+  @include utils.adaptive-value('padding-inline', 120, 28);
+
+  &--large {
+    @include utils.adaptive-value('padding-inline', 80, 20);
+  }
+
+  &--about  {
+    @include utils.adaptive-value('padding-inline', 100, 28);
+  }
+
+  &--testimonials {
+    @include utils.adaptive-value('padding-inline', 140, 48);
+  }
+}

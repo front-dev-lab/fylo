@@ -1,0 +1,50 @@
+@use '../utils';
+@use '../typography';
+
+.intro {
+  @include utils.adaptive-value('padding-top', 75, 48);
+  @include utils.adaptive-value('padding-bottom', 150, 120);
+  background-color: utils.$c_dark-blue;
+  background-image: url(/img/svg/bg-curvy-desktop.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: bottom;
+
+  @include utils.onMobile {
+    background-image: url(/img/svg/bg-curvy-mobile.svg);
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__image {
+    @include utils.adaptive-value('margin-bottom', 36, 33);
+    display: block;
+    width: 100%;
+    max-width: utils.$max-image-width;
+    aspect-ratio: 720 / 534;
+    object-fit: contain;
+    object-position: center;
+  }
+
+  &__article {
+    margin-bottom: 32px;
+    display: grid;
+    justify-items: center;
+    @include utils.adaptive-value('row-gap', 32, 15);
+    max-width: 734px;
+    text-align: center;
+  }
+
+  &__title {
+    @extend %h1;
+  }
+
+  &__text {
+    max-width: 589px;
+    @extend %secondary-text;
+  }
+}

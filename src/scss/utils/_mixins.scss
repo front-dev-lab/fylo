@@ -1,0 +1,23 @@
+@use 'variables';
+
+@mixin onMobile {
+  @media (max-width: variables.$max-mobile-width) {
+    @content;
+  }
+}
+
+@mixin onTablet {
+  @media (max-width: variables.$max-tablet-width) {
+    @content;
+  }
+}
+
+@mixin adaptive-value($property, $max-size, $min-size) {
+  $difference: $max-size - $min-size;
+
+  #{$property}: $max-size + px;
+
+  @media (max-width: #{variables.$max-width + px}) {
+    #{$property}: calc(#{$min-size + px} + #{$difference} * ((100vw - #{variables.$min-width + px}) / #{variables.$max-width - variables.$min-width}));
+  }
+}

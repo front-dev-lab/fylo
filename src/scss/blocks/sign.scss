@@ -1,0 +1,83 @@
+@use '../utils';
+@use '../typography';
+
+$max-input-padding-inline: 38;
+$min-input-padding-inline: 29;
+
+.sign {
+  transform: translateY(42%);
+
+  @include utils.onTablet {
+    transform: translateY(46%);
+  }
+
+  @include utils.onMobile {
+    transform: translateY(50%);
+  }
+
+  &__content {
+    justify-self: center;
+    display: grid;
+    @include utils.adaptive-value('row-gap', 38, 32);
+    max-width: 863px;
+    border-radius: 9px;
+    @include utils.adaptive-value('padding-block', 42, 38);
+    @include utils.adaptive-value('padding-inline', 77, 28);
+    background-color: utils.$c_very-dark-blue;
+  }
+
+  &__article {
+    display: grid;
+    row-gap: 16px;
+    text-align: center;
+    @extend %tertiary-text;
+  }
+
+  &__title {
+    @extend %h2;
+  }
+
+  &__form {
+    display: grid;
+    grid-template-columns: 1fr utils.$small-button-width;
+    column-gap: 30px;
+
+    @include utils.onMobile {
+      grid-template-columns: 1fr;
+      row-gap: 24px;
+    }
+  }
+
+  &__label {
+    position: relative;
+  }
+
+  &__input {
+    position: relative;
+    width: 100%;
+    height: 48px;
+    border-radius:30px;
+    @include utils.adaptive-value('padding-inline', $max-input-padding-inline, $min-input-padding-inline);
+    @extend %input-text;
+    color: utils.$c_black;
+
+    &::placeholder {
+      color: utils.$c_gray;
+    }
+  }
+
+  &__error {
+    position: absolute;
+    bottom: -19px;
+    left: 0;
+    display: none;
+    width: max-content;
+    @include utils.adaptive-value('padding-left', $max-input-padding-inline, $min-input-padding-inline);
+    @extend %error-text;
+    color: utils.$c_red;
+
+    &--active {
+      display: block;
+    }
+  }
+}

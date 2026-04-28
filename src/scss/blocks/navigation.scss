@@ -1,0 +1,53 @@
+@use '../utils';
+@use '../typography';
+
+.navigation {
+  width: max-content;
+
+  &--footer {
+    display: grid;
+    grid-auto-flow: column;
+    @include utils.adaptive-value('column-gap', 80, 20);
+
+    @include utils.onTablet {
+      column-gap: 80px;
+    }
+
+    @include utils.onMobile {
+      grid-auto-flow: row;
+      row-gap: 48px;
+    }
+  }
+
+  &__list {
+    display: grid;
+    grid-auto-flow: column;
+    @include utils.adaptive-value('column-gap', 57, 24);
+
+    &--footer {
+      grid-auto-flow: row;
+      row-gap: 16px;
+    }
+  }
+
+  &__link {
+    position: relative;
+    @extend %nav-link-text;
+    color: utils.$c_white;
+    transition-property: font-weight;
+    transition-duration: utils.$anim-time;
+
+    &:hover {
+      font-weight: 700;
+      text-decoration: underline;
+    }
+
+    &--footer {
+      @extend %link-text;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+}

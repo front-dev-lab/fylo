@@ -1,0 +1,45 @@
+@use '../utils';
+@use '../typography';
+
+.testimonials-card {
+  display: grid;
+  @include utils.adaptive-value('row-gap', 24, 17);
+  max-width: 400px;
+  border-radius: 4px;
+  overflow: hidden;
+  @include utils.adaptive-value('padding-top', 40, 24);
+  @include utils.adaptive-value('padding-inline', 26, 20);
+  @include utils.adaptive-value('padding-bottom', 26, 20);
+  background-color: utils.$c_dark-blue;
+  @extend %testimonial-text;
+
+  &__author {
+    display: grid;
+    grid-template-areas: 
+    "avatar name"
+    "avatar profession";
+    column-gap: 8px;
+    row-gap: 4px;
+    width: max-content;
+  }
+
+  &__avatar {
+    grid-area: avatar;
+    display: block;
+    width: 24px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+
+  &__author-name {
+    grid-area: name;
+    align-self: flex-end;
+    @extend %testimonial-author-text;
+  }
+
+  &__author-profession {
+    grid-area: profession;
+    @extend %testimonial-profession-text;
+  }
+}

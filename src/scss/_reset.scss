@@ -1,0 +1,56 @@
+html, body, div, span,
+h1, h2, h3, h4, h5, h6, p,
+a,
+img,
+ol, ul, li,
+form, label, input,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, button, aside,
+footer, header,
+nav, section,
+audio, video {
+  box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+}
+
+article,
+footer, header, nav, section {
+	display: block;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+	line-height: 1;
+}
+
+input {
+  -webkit-appearance: none;
+  -webkit-border-radius: 0;
+  outline: none;
+  border: none;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+ol, ul {
+	list-style: none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+li {
+  line-height: 100%;
+}

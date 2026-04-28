@@ -1,0 +1,36 @@
+@use '../utils';
+
+.testimonials {
+  &__list {
+    display: grid;
+    grid-auto-flow: column;
+    @include utils.adaptive-value('column-gap', 40, 24);
+
+    @include utils.onTablet {
+      grid-auto-flow: row;
+      row-gap: 24px;
+      justify-content: center;
+    }
+
+
+  }
+
+  &__list-item {
+    position: relative;
+
+      &::before {
+      content: '';
+      z-index: -1;
+      position: absolute;
+      @include utils.adaptive-value('top', -35, -15);
+      @include utils.adaptive-value('left', -8, 5);
+      display: block;
+      @include utils.adaptive-value('width', 54, 22);
+      aspect-ratio: 54 / 43;
+      background-image: url(/img/bg-quotes.png);
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+    }
+  }
+}

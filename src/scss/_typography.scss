@@ -1,0 +1,110 @@
+@use 'utils';
+
+%main-text {
+  font-family: "Open Sans", Arial, "Helvetica Neue", Helvetica, sans-serif;
+  @include utils.adaptive-value('font-size', 16, 14);
+  font-weight: 400;
+  @include utils.adaptive-value('line-height', 24, 21);
+  letter-spacing: 0px;
+}
+
+%secondary-text {
+  @include utils.adaptive-value('font-size', 20, 14);
+  font-weight: 400;
+  @include utils.adaptive-value('line-height', 30, 21);
+  letter-spacing: 0px;
+}
+
+%tertiary-text {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+  letter-spacing: 0px;
+}
+
+%testimonial-text {
+  @include utils.adaptive-value('font-size', 14, 10);
+  font-weight: 400;
+  @include utils.adaptive-value('line-height', 21, 18);
+  @include utils.adaptive-value('letter-spacing', 0.5, 0);
+}
+
+%testimonial-author-text {
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 12px;
+  letter-spacing: 0.5px;
+}
+
+%testimonial-profession-text {
+  font-size: 8px;
+  font-weight: 400;
+  line-height: 10px;
+  letter-spacing: 0.57px;
+}
+
+%input-text {
+  @include utils.adaptive-value('font-size', 12, 10);
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0px;
+}
+
+%error-text {
+  font-size: 10px;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 0px;
+}
+
+%h1 {
+  font-family: Raleway, Arial, "Helvetica Neue", Helvetica, sans-serif;
+  @include utils.adaptive-value('font-size', 40, 24);
+  font-weight: 700;
+  @include utils.adaptive-value('line-height', 60, 36);
+  letter-spacing: 0px;
+}
+
+%h2 {
+  font-family: Raleway, Arial, "Helvetica Neue", Helvetica, sans-serif;
+  @include utils.adaptive-value('font-size', 32, 18);
+  font-weight: 700;
+  @include utils.adaptive-value('line-height', 48, 24);
+  letter-spacing: 0px;
+}
+
+%h3 {
+  font-family: Raleway, Arial, "Helvetica Neue", Helvetica, sans-serif;
+  @include utils.adaptive-value('font-size', 20, 18);
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 0px;
+}
+
+%link-text {
+  @include utils.adaptive-value('font-size', 16, 12);
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0px;
+}
+
+%nav-link-text {
+  @extend %link-text;
+  font-family: Raleway, Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+%button-text {
+  font-family: Raleway, Arial, "Helvetica Neue", Helvetica, sans-serif;
+  @include utils.adaptive-value('font-size', 16, 14);
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 0px;
+}
+
+%small-button-text {
+  font-family: Raleway, Arial, "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 0px;
+}

@@ -1,0 +1,60 @@
+@use '../utils';
+@use '../typography';
+
+.button {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  border-radius: 28px;
+  @include utils.adaptive-value('width', 280, 240);
+  @include utils.adaptive-value('height', 56, utils.$min-button-height);
+  background: utils.$gradient;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    transition-property: background-color;
+    transition-duration: utils.$anim-time;
+  }
+
+  &:disabled {
+    background: utils.$c_gray;
+
+    &::after {
+      display: none;
+    }
+  }
+
+  &--small {
+    width: utils.$small-button-width;
+    height: utils.$min-button-height + px;
+
+    @include utils.onMobile {
+      width: 100%;
+    }
+  }
+
+  &:hover {
+    &::after {
+      background-color: utils.$c_light-blue;
+    }
+  }
+
+  &__text {
+    position: relative;
+    z-index: 2;
+    @extend %button-text;
+    color: utils.$c_white;
+
+    &--small {
+      @extend %small-button-text;
+    }
+  }
+}

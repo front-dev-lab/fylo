@@ -1,0 +1,19 @@
+@use '../utils';
+
+.logo {
+  display: block;
+  @include utils.adaptive-value('width', 176, 80);
+  aspect-ratio: 176 / 52;
+  background-image: url(/public/img/svg/logo.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+
+  &--small {
+    width: 108px;
+
+    @include utils.onMobile {
+      padding-left: 10px;
+    }
+  }
+}
