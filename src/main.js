@@ -43,7 +43,7 @@ const initObserver = () => {
       obs.unobserve(element);
     });
   }, {
-    rootMargin: '-100px',
+    rootMargin: '-50px',
   });
 
   elements.forEach(element => observer.observe(element));
